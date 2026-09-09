@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Hay que declarar un th:object en el formulario con el mismo nombre que
+el tipo del modelo del formulario (UserData) cambiando la mayúscula de
+la primera letra por minúscula (userData) -->
+<form th:action="@{/calculator}" th:object="${data}" method="post">
+    <table>
+        <tr>
+            <td>
+                <input type="number" th:field="*{first}"/>
+            </td>
+            <td>+</td>
+            <td>
+                <input type="number" th:field="*{second}" />
+            </td>
+        </tr>
+        <tr>
+            <td><button type="submit">Enviar</button></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
